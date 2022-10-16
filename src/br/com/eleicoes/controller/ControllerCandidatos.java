@@ -7,7 +7,10 @@ public class ControllerCandidatos {
 		case 1:
 			StepUm.executar(respostaUsuario);
 			break;
-
+		case 2:
+			StepDois.executar(respostaUsuario);
+			break;
+	
 		default:
 			break;
 		}
