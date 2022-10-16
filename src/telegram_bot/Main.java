@@ -14,10 +14,12 @@ import com.pengrad.telegrambot.response.SendResponse;
 
 import br.com.eleicoes.controller.ControllerCandidatos;
 
+
 public class Main {
 
 	public static void main(String[] args) {
 		ControllerCandidatos.controlStep(1, "opcao1");
+		ControllerCandidatos.controlStep(2, "opcao2");
 		/*
 		 * // Criacao do objeto bot com as informacoes de acesso. TelegramBot bot = new
 		 * TelegramBot("SEU_TOKEN_ACESSO");
