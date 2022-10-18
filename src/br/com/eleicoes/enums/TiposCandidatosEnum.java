@@ -14,7 +14,7 @@ public enum TiposCandidatosEnum {
 	TiposCandidatosEnum(int idCargo, int codTipoCandidato, String descricao){
 		this.idCargo = idCargo;
 		this.codTipoCandidato = codTipoCandidato;
-		this.descricao = descricao;		
+		this.descricao = descricao;
 	}
 	
 	public int getIdCandidato() {
