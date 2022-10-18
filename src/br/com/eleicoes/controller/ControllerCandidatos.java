@@ -11,7 +11,6 @@ public class ControllerCandidatos {
 		case 2:
 			StepDois.executar(respostaUsuario);
 			break;
-	
 		default:
 			break;
 		}
