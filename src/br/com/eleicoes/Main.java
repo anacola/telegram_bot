@@ -2,24 +2,24 @@ package br.com.eleicoes;
 
 import java.util.HashMap;
 import java.util.List;
-
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.ChatAction;
 import com.pengrad.telegrambot.request.GetUpdates;
 import com.pengrad.telegrambot.request.SendChatAction;
+import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
-
-import br.com.eleicoes.util.CandidatoUtils;
+import br.com.eleicoes.controller.Controller;
+import br.com.eleicoes.model.InformacoesUmUsuario;
 
 public class Main {
 
+	private static HashMap<Long, InformacoesUmUsuario> informacoesTodosUsuarios = new HashMap<Long, InformacoesUmUsuario>();
+	
 	public static void main(String[] args) {
 		// Criacao do objeto bot com as informacoes de acesso.
-		TelegramBot bot = new TelegramBot("3156587431:HSBGYGSGdnvDE4GHmaDSJpUN_m3KKyTr_ao");
+		TelegramBot bot = new TelegramBot("5367767257:AAHrtvZdGjDgrXsGBem99YHKLaMLU4clrwY");
 
-		HashMap<String, List<String>> usuarios = new HashMap<String, List<String>>();
-		
 		// Objeto responsavel por receber as mensagens.
 		GetUpdatesResponse updatesResponse;
 
@@ -41,36 +41,33 @@ public class Main {
 
 				// Atualizacao do off-set.
 				m = update.updateId() + 1;
+				
+				criaThreadUsuario(update.message().chat().id());
 
 				// Envio de "Escrevendo" antes de enviar a resposta.
 				bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 				
-				List<String> respostas = usuarios.get(String.valueOf(update.message().chat().id()));
+				List<String> mensagensBot = new Controller().controleStep(update.message().text(),
+													   informacoesTodosUsuarios.get(update.message().chat().id())
+													  );
 				
-				if (respostas == null || "inicio".equalsIgnoreCase(CandidatoUtils.removeAcentos(update.message().text()))) {
-					Steps.executarStepInicio(update, bot, usuarios);
-				} else {
-					int step = respostas.size();
-					switch (step) {
-					case 1:
-						Steps.executarStep1(update, bot, usuarios);
-						break;
-					case 2:
-						Steps.executarStep2(update, bot, usuarios);
-						break;
-					case 3:
-						Steps.executarStep3(update, bot, usuarios, respostas);
-						break;
-					case 4:
-						Steps.executarStep4(update, bot, usuarios, respostas);
-						break;
-					case 5:
-						Steps.executarStep5(update, bot);
-						break;
-					}
+				for (String mensagem : mensagensBot) {
+					bot.execute(new SendMessage(update.message().chat().id(), mensagem));
 				}
+				
+				mensagensBot.clear();
+				System.out.println("teste");
+			
 			}
 		}
+	}
+	
+	private static void criaThreadUsuario (Long idChat) {
+		
+		if(!informacoesTodosUsuarios.containsKey(idChat)) {
+			informacoesTodosUsuarios.put(idChat, new InformacoesUmUsuario());
+		}
+		
 	}
 
 }

@@ -86,6 +86,10 @@ public class MensagensUtils {
 	public static final String MENSAGEM_REINICIAR_PESQUISA = 
 			"Para iniciar nova pesquisa digite 'inicio'";
 	
+	public static final String MENSAGEM_ERRO_STEP = 
+			"Erro inesperado!\n"
+			+ "Favor tente novamente.";
+	
 	public static String mensagemCandidatoFormatada(Candidato candidato) {
 		return "Número candidato: "+candidato.getNumero()+"\n"
 				+ "Nome Urna: "+candidato.getNomeUrna()+"\n"

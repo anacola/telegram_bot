@@ -1,0 +1,4 @@
+telegram_bot\Main.class
+br\com\eleicoes\controller\StepUm.class
+br\com\eleicoes\controller\ControllerCandidatos.class
+br\com\eleicoes\enums\TiposCandidatosEnum.class
