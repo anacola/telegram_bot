@@ -10,15 +10,16 @@ import com.pengrad.telegrambot.request.GetUpdates;
 import com.pengrad.telegrambot.request.SendChatAction;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 
+import br.com.eleicoes.model.Usuario;
 import br.com.eleicoes.util.CandidatoUtils;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// Criacao do objeto bot com as informacoes de acesso.
-		TelegramBot bot = new TelegramBot("3156587431:HSBGYGSGdnvDE4GHmaDSJpUN_m3KKyTr_ao");
+		TelegramBot bot = new TelegramBot("5629294896:AAFaHgT-nubZSCecbLiqhDcQO563iOKI9Xk");
 
-		HashMap<String, List<String>> usuarios = new HashMap<String, List<String>>();
+		HashMap<String, Usuario> usuarios = new HashMap<String, Usuario>();
 		
 		// Objeto responsavel por receber as mensagens.
 		GetUpdatesResponse updatesResponse;
@@ -26,7 +27,6 @@ public class Main {
 		// Controle de off-set, isto e, a partir deste ID sera lido as mensagens
 		// pendentes na fila.
 		int m = 0;
-
 		// Loop infinito pode ser alterado por algum timer de intervalo curto.
 		while (true) {
 			// Executa comando no Telegram para obter as mensagens pendentes a partir de um
@@ -35,6 +35,7 @@ public class Main {
 
 			// Lista de mensagens.
 			List<Update> updates = updatesResponse.updates();
+			
 
 			// Analise de cada acao da mensagem.
 			for (Update update : updates) {
@@ -45,11 +46,12 @@ public class Main {
 				// Envio de "Escrevendo" antes de enviar a resposta.
 				bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 				
-				List<String> respostas = usuarios.get(String.valueOf(update.message().chat().id()));
+				Usuario usuario = usuarios.get(String.valueOf(update.message().chat().id()));
 				
-				if (respostas == null || "inicio".equalsIgnoreCase(CandidatoUtils.removeAcentos(update.message().text()))) {
+				if (usuario == null || "inicio".equalsIgnoreCase(CandidatoUtils.removeAcentos(update.message().text()))) {
 					Steps.executarStepInicio(update, bot, usuarios);
 				} else {
+					List<String> respostas = usuario.getRespostas();
 					int step = respostas.size();
 					switch (step) {
 					case 1:
@@ -65,7 +67,10 @@ public class Main {
 						Steps.executarStep4(update, bot, usuarios, respostas);
 						break;
 					case 5:
-						Steps.executarStep5(update, bot);
+						Steps.executarStep5(update, bot, usuarios, respostas);
+						break;
+					case 6:
+						Steps.executarStep6(update, bot);
 						break;
 					}
 				}

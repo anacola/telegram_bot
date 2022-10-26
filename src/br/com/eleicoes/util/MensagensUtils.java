@@ -1,13 +1,15 @@
 package br.com.eleicoes.util;
 
+import java.util.List;
 import java.util.Map;
 
 import br.com.eleicoes.model.Candidato;
+import br.com.eleicoes.model.CandidatoPrincipal;
 
 public class MensagensUtils {
 
 	public static final String MENSAGEM_INICIAL_CANDIDATOS = 
-			"Escolha uma das opções para pesquisa do seu candidato: \n"
+			"Escolha uma das opÃ§Ãµes para pesquisa do seu candidato: \n"
 			+ "\n1 - Presidente"
 			+ "\n2 - Governador"
 			+ "\n3 - Senador"
@@ -15,69 +17,69 @@ public class MensagensUtils {
 			+ "\n5 - Deputado Estadual";
 	
 	public static final String MENSAGEM_REGIOES = 
-			"De qual região é o seu candidato: \n"
+			"De qual regiÃ£o Ã© o seu candidato: \n"
 			+ "\n1 - Norte"
 			+ "\n2 - Nordeste"
 			+ "\n3 - Centro-Oeste"
 			+ "\n4 - Sudeste"
 			+ "\n5 - Sul"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_NORTE = 
-			"De qual estado é o seu candidato: \n"
+			"De qual estado Ã© o seu candidato: \n"
 			+ "\n1 - Acre"
 			+ "\n2 - Amazonas"
-			+ "\n3 - Amapá"
-			+ "\n4 - Pará"
-			+ "\n5 - Rondônia"
+			+ "\n3 - AmapÃ¡"
+			+ "\n4 - ParÃ¡"
+			+ "\n5 - RondÃ´nia"
 			+ "\n6 - Roraima"
 			+ "\n7 - Tocantins"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_NORDESTE = 
-			"De qual estado é o seu candidato: \n"
+			"De qual estado Ã© o seu candidato: \n"
 			+ "\n1 - Alagoas"
 			+ "\n2 - Bahia"
-			+ "\n3 - Ceará"
-			+ "\n4 - Maranhão"
-			+ "\n5 - Paraíba"
+			+ "\n3 - CearÃ¡"
+			+ "\n4 - MaranhÃ£o"
+			+ "\n5 - ParaÃ­ba"
 			+ "\n6 - Pernambuco"
 			+ "\n7 - Piaui"
 			+ "\n8 - Rio Grande do Norte"
 			+ "\n9 - Sergipe"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_CENTRO_OESTE = 
-			"De qual estado é o seu candidato: \n"
+			"De qual estado Ã© o seu candidato: \n"
 			+ "\n1 - Distrito Federal"
-			+ "\n2 - Goiás"
+			+ "\n2 - GoiÃ¡s"
 			+ "\n3 - Mato Grosso do Sul"
 			+ "\n4 - Mato Grosso"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_SUDESTE = 
-			"De qual estado é o seu candidato: \n"
-			+ "\n1 - Espírito Santo"
+			"De qual estado Ã© o seu candidato: \n"
+			+ "\n1 - EspÃ­rito Santo"
 			+ "\n2 - Minas Gerais"
 			+ "\n3 - Rio de Janeio"
-			+ "\n4 - São Paulo"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n4 - SÃ£o Paulo"
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_SUL = 
-			"De qual estado é o seu candidato: \n"
-			+ "\n1 - Paraná"
+			"De qual estado Ã© o seu candidato: \n"
+			+ "\n1 - ParanÃ¡"
 			+ "\n2 - Rio Grande do Sul"
 			+ "\n3 - Santa Catarina"
-			+ "\n\nDigite 'inicio' para começar novamente";
+			+ "\n\nDigite 'inicio' para comeÃ§ar novamente";
 	
 	public static final String MENSAGEM_NOME_CANDIDATO = 
 			"Qual o nome do seu candidato ?";
 	
 	public static final String MENSAGEM_ERRO = 
-			"Resposta incompatível, favor tente novamente !!!";
+			"Resposta incompatÃ­vel, favor tente novamente !!!";
 	
 	public static final String MENSAGEM_ERRO_NOME_CANDIDATO = 
-			"Candidato não foi encontrado, favor tente novamente !!!";
+			"Candidato nÃ£o foi encontrado, favor tente novamente !!!";
 	
 	public static final String MENSAGEM_ERRO_CANDIDADO_DUPLICADO = 
 			"Foi encontrado mais de 1 candidato com esse nome \n"
@@ -87,13 +89,44 @@ public class MensagensUtils {
 			"Para iniciar nova pesquisa digite 'inicio'";
 	
 	public static String mensagemCandidatoFormatada(Candidato candidato) {
-		return "Número candidato: "+candidato.getNumero()+"\n"
+		return "NÃºmero candidato: "+candidato.getNumero()+"\n"
 				+ "Nome Urna: "+candidato.getNomeUrna()+"\n"
 				+ "Nome Completo: "+candidato.getNomeCompleto()+"\n"
 				+ "Cargo: "+candidato.getCargo().getNome()+"\n"
-				+ "Situação: "+candidato.getDescricaoTotalizacao()+"\n"
-				+ "Partido: "+candidato.getPartido().getSigla();		
+				+ "SituaÃ§Ã£o: "+candidato.getDescricaoTotalizacao()+"\n"
+				+ "Partido: "+candidato.getPartido().getSigla() + "\n"				
+				+ "O que mais gostaria de saber sobre esse candidato? \n"
+				+ "\n1 - Limite de gasto 1Âº Turno"
+				+ "\n2 - Limite de gasto 2Âº Turno"
+				+ "\n3 - Fundo PartidÃ¡rio Utilizado"
+				+ "\n4 - Fundo Especial Utilizado";
 	}
+	
+	public static String nomeCandidato (List<String> listaTodosCandidatos) {
+		return listaTodosCandidatos + "\n";
+	}
+	
+	
+	public static String outrasInfosCandidatos (CandidatoPrincipal candidatoPrincipal, String respostaUsuario) {
+		String mensagemRetorno = "";
+		switch (respostaUsuario) {
+		case "1":
+			mensagemRetorno = "Limite de gasto 1Âº Turno R$: " + String.format("%.2f", candidatoPrincipal.getDespesas().getLimiteDeGasto1T());
+			break;
+		case "2":
+			mensagemRetorno = "Limite de gasto 2Âº Turno R$: " + String.format("%.2f", candidatoPrincipal.getDespesas().getLimiteDeGasto2T());
+			break;
+		case "3":
+			mensagemRetorno = "Fundo partidÃ¡rio R$: " + String.format("%.2f", candidatoPrincipal.getDespesas().getFundosPartidarios());
+			break;
+		case "4":
+			mensagemRetorno = "Fundo Especial R$: " +String.format("%.2f", candidatoPrincipal.getDespesas().getFundoEspecial());
+			break;
+		}
+		return mensagemRetorno;
+
+	}
+	
 			
 	
 	public static String getMensagemEstadoById(String idMensagem) {

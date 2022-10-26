@@ -1,9 +1,9 @@
 package br.com.eleicoes.model;
 
 public class Candidato {
-    private Object id;
+    private long id;
     private String nomeUrna;
-    private int numero;
+    private String numero;
     private Object idCandidatoSuperior;
     private String nomeCompleto;
     private Object descricaoSexo;
@@ -72,10 +72,10 @@ public class Candidato {
     private Object st_MOTIVO_GASTO_ILICITO;
     private Object ds_MOTIVO_OUTROS;
     
-	public Object getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Object id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNomeUrna() {
@@ -84,10 +84,10 @@ public class Candidato {
 	public void setNomeUrna(String nomeUrna) {
 		this.nomeUrna = nomeUrna;
 	}
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public Object getIdCandidatoSuperior() {
