@@ -13,22 +13,22 @@ public class DadosConsolidados {
     private double totalReceitaPF;
     private int qtdReceitaPF;
     private double percentualReceitaPF;
-    private int totalReceitaPJ;
+    private double totalReceitaPJ;
     private int qtdReceitaPJ;
-    private int percentualReceitaPJ;
+    private double percentualReceitaPJ;
     private double totalPartidos;
     private int qtdPartidos;
     private double percentualPartidos;
-    private int totalInternet;
+    private double totalInternet;
     private int qtdInternet;
-    private int percentualInternet;
+    private double percentualInternet;
     private double totalRoni;
     private int qtdRoni;
     private double percentualRoni;
-    private int totalProprios;
+    private double totalProprios;
     private int qtdProprios;
-    private int percentualProprios;
-    private int totalReceitaOutCand;
+    private double percentualProprios;
+    private double totalReceitaOutCand;
     private int qtdReceitaOutCand;
     private double percentualReceitaOutCand;
     private double totalDoacaoFcc;
@@ -36,31 +36,30 @@ public class DadosConsolidados {
     private double percentualDoacaoFcc;
     private Object totalDoacaoDevolvida;
     private int qtdDoacaoDevolvida;
-    private int percentualDoacaoDevolvida;
+    private double percentualDoacaoDevolvida;
     private Object sqPrestadorConta;
     private Object sqEntregaPrestacao;
     private int totalReceitaComercializacao;
     private int qtDoacaoComercializacao;
-    private int percentualDoacaoComercializacao;
-    private int totalDoacaoAplicacaoFinanceira;
+    private double percentualDoacaoComercializacao;
+    private double totalDoacaoAplicacaoFinanceira;
     private int qtDoacaoAplicacaoFinanceira;
-    private int percentualDoacaoAplicacaoFinanceira;
-    private int totalDoacaoBensMoveisImoveis;
+    private double percentualDoacaoAplicacaoFinanceira;
+    private double totalDoacaoBensMoveisImoveis;
     private int qtDoacaoBensMoveisImoveis;
     private double percentualDoacaoBensMoveisImoveis;
-    private int graphQtdReceitaFin;
+    private double graphQtdReceitaFin;
     private double graphVrReceitaFin;
-    private int graphQtdReceitaFinFundo;
-    private int graphVrReceitaFinFundo;
+    private double graphQtdReceitaFinFundo;
+    private double graphVrReceitaFinFundo;
     private double graphPercentReceitaFinFundo;
-    private int graphQtdReceitaFinOutros;
+    private double graphQtdReceitaFinOutros;
     private double graphVrReceitaFinOutros;
     private double graphPercentFinOutros;
-    private int graphQtdReceitaFinFefc;
-    private int graphVrReceitaFinFefc;
+    private double graphQtdReceitaFinFefc;
+    private double graphVrReceitaFinFefc;
     private double graphPercentFinFefc;
     private double totalFinanceiroComRoni;
-    
 	public double getTotalRecebido() {
 		return totalRecebido;
 	}
@@ -133,10 +132,10 @@ public class DadosConsolidados {
 	public void setPercentualReceitaPF(double percentualReceitaPF) {
 		this.percentualReceitaPF = percentualReceitaPF;
 	}
-	public int getTotalReceitaPJ() {
+	public double getTotalReceitaPJ() {
 		return totalReceitaPJ;
 	}
-	public void setTotalReceitaPJ(int totalReceitaPJ) {
+	public void setTotalReceitaPJ(double totalReceitaPJ) {
 		this.totalReceitaPJ = totalReceitaPJ;
 	}
 	public int getQtdReceitaPJ() {
@@ -145,10 +144,10 @@ public class DadosConsolidados {
 	public void setQtdReceitaPJ(int qtdReceitaPJ) {
 		this.qtdReceitaPJ = qtdReceitaPJ;
 	}
-	public int getPercentualReceitaPJ() {
+	public double getPercentualReceitaPJ() {
 		return percentualReceitaPJ;
 	}
-	public void setPercentualReceitaPJ(int percentualReceitaPJ) {
+	public void setPercentualReceitaPJ(double percentualReceitaPJ) {
 		this.percentualReceitaPJ = percentualReceitaPJ;
 	}
 	public double getTotalPartidos() {
@@ -169,10 +168,10 @@ public class DadosConsolidados {
 	public void setPercentualPartidos(double percentualPartidos) {
 		this.percentualPartidos = percentualPartidos;
 	}
-	public int getTotalInternet() {
+	public double getTotalInternet() {
 		return totalInternet;
 	}
-	public void setTotalInternet(int totalInternet) {
+	public void setTotalInternet(double totalInternet) {
 		this.totalInternet = totalInternet;
 	}
 	public int getQtdInternet() {
@@ -181,10 +180,10 @@ public class DadosConsolidados {
 	public void setQtdInternet(int qtdInternet) {
 		this.qtdInternet = qtdInternet;
 	}
-	public int getPercentualInternet() {
+	public double getPercentualInternet() {
 		return percentualInternet;
 	}
-	public void setPercentualInternet(int percentualInternet) {
+	public void setPercentualInternet(double percentualInternet) {
 		this.percentualInternet = percentualInternet;
 	}
 	public double getTotalRoni() {
@@ -205,10 +204,10 @@ public class DadosConsolidados {
 	public void setPercentualRoni(double percentualRoni) {
 		this.percentualRoni = percentualRoni;
 	}
-	public int getTotalProprios() {
+	public double getTotalProprios() {
 		return totalProprios;
 	}
-	public void setTotalProprios(int totalProprios) {
+	public void setTotalProprios(double totalProprios) {
 		this.totalProprios = totalProprios;
 	}
 	public int getQtdProprios() {
@@ -217,16 +216,16 @@ public class DadosConsolidados {
 	public void setQtdProprios(int qtdProprios) {
 		this.qtdProprios = qtdProprios;
 	}
-	public int getPercentualProprios() {
+	public double getPercentualProprios() {
 		return percentualProprios;
 	}
-	public void setPercentualProprios(int percentualProprios) {
+	public void setPercentualProprios(double percentualProprios) {
 		this.percentualProprios = percentualProprios;
 	}
-	public int getTotalReceitaOutCand() {
+	public double getTotalReceitaOutCand() {
 		return totalReceitaOutCand;
 	}
-	public void setTotalReceitaOutCand(int totalReceitaOutCand) {
+	public void setTotalReceitaOutCand(double totalReceitaOutCand) {
 		this.totalReceitaOutCand = totalReceitaOutCand;
 	}
 	public int getQtdReceitaOutCand() {
@@ -271,10 +270,10 @@ public class DadosConsolidados {
 	public void setQtdDoacaoDevolvida(int qtdDoacaoDevolvida) {
 		this.qtdDoacaoDevolvida = qtdDoacaoDevolvida;
 	}
-	public int getPercentualDoacaoDevolvida() {
+	public double getPercentualDoacaoDevolvida() {
 		return percentualDoacaoDevolvida;
 	}
-	public void setPercentualDoacaoDevolvida(int percentualDoacaoDevolvida) {
+	public void setPercentualDoacaoDevolvida(double percentualDoacaoDevolvida) {
 		this.percentualDoacaoDevolvida = percentualDoacaoDevolvida;
 	}
 	public Object getSqPrestadorConta() {
@@ -301,16 +300,16 @@ public class DadosConsolidados {
 	public void setQtDoacaoComercializacao(int qtDoacaoComercializacao) {
 		this.qtDoacaoComercializacao = qtDoacaoComercializacao;
 	}
-	public int getPercentualDoacaoComercializacao() {
+	public double getPercentualDoacaoComercializacao() {
 		return percentualDoacaoComercializacao;
 	}
-	public void setPercentualDoacaoComercializacao(int percentualDoacaoComercializacao) {
+	public void setPercentualDoacaoComercializacao(double percentualDoacaoComercializacao) {
 		this.percentualDoacaoComercializacao = percentualDoacaoComercializacao;
 	}
-	public int getTotalDoacaoAplicacaoFinanceira() {
+	public double getTotalDoacaoAplicacaoFinanceira() {
 		return totalDoacaoAplicacaoFinanceira;
 	}
-	public void setTotalDoacaoAplicacaoFinanceira(int totalDoacaoAplicacaoFinanceira) {
+	public void setTotalDoacaoAplicacaoFinanceira(double totalDoacaoAplicacaoFinanceira) {
 		this.totalDoacaoAplicacaoFinanceira = totalDoacaoAplicacaoFinanceira;
 	}
 	public int getQtDoacaoAplicacaoFinanceira() {
@@ -319,16 +318,16 @@ public class DadosConsolidados {
 	public void setQtDoacaoAplicacaoFinanceira(int qtDoacaoAplicacaoFinanceira) {
 		this.qtDoacaoAplicacaoFinanceira = qtDoacaoAplicacaoFinanceira;
 	}
-	public int getPercentualDoacaoAplicacaoFinanceira() {
+	public double getPercentualDoacaoAplicacaoFinanceira() {
 		return percentualDoacaoAplicacaoFinanceira;
 	}
-	public void setPercentualDoacaoAplicacaoFinanceira(int percentualDoacaoAplicacaoFinanceira) {
+	public void setPercentualDoacaoAplicacaoFinanceira(double percentualDoacaoAplicacaoFinanceira) {
 		this.percentualDoacaoAplicacaoFinanceira = percentualDoacaoAplicacaoFinanceira;
 	}
-	public int getTotalDoacaoBensMoveisImoveis() {
+	public double getTotalDoacaoBensMoveisImoveis() {
 		return totalDoacaoBensMoveisImoveis;
 	}
-	public void setTotalDoacaoBensMoveisImoveis(int totalDoacaoBensMoveisImoveis) {
+	public void setTotalDoacaoBensMoveisImoveis(double totalDoacaoBensMoveisImoveis) {
 		this.totalDoacaoBensMoveisImoveis = totalDoacaoBensMoveisImoveis;
 	}
 	public int getQtDoacaoBensMoveisImoveis() {
@@ -343,10 +342,10 @@ public class DadosConsolidados {
 	public void setPercentualDoacaoBensMoveisImoveis(double percentualDoacaoBensMoveisImoveis) {
 		this.percentualDoacaoBensMoveisImoveis = percentualDoacaoBensMoveisImoveis;
 	}
-	public int getGraphQtdReceitaFin() {
+	public double getGraphQtdReceitaFin() {
 		return graphQtdReceitaFin;
 	}
-	public void setGraphQtdReceitaFin(int graphQtdReceitaFin) {
+	public void setGraphQtdReceitaFin(double graphQtdReceitaFin) {
 		this.graphQtdReceitaFin = graphQtdReceitaFin;
 	}
 	public double getGraphVrReceitaFin() {
@@ -355,16 +354,16 @@ public class DadosConsolidados {
 	public void setGraphVrReceitaFin(double graphVrReceitaFin) {
 		this.graphVrReceitaFin = graphVrReceitaFin;
 	}
-	public int getGraphQtdReceitaFinFundo() {
+	public double getGraphQtdReceitaFinFundo() {
 		return graphQtdReceitaFinFundo;
 	}
-	public void setGraphQtdReceitaFinFundo(int graphQtdReceitaFinFundo) {
+	public void setGraphQtdReceitaFinFundo(double graphQtdReceitaFinFundo) {
 		this.graphQtdReceitaFinFundo = graphQtdReceitaFinFundo;
 	}
-	public int getGraphVrReceitaFinFundo() {
+	public double getGraphVrReceitaFinFundo() {
 		return graphVrReceitaFinFundo;
 	}
-	public void setGraphVrReceitaFinFundo(int graphVrReceitaFinFundo) {
+	public void setGraphVrReceitaFinFundo(double graphVrReceitaFinFundo) {
 		this.graphVrReceitaFinFundo = graphVrReceitaFinFundo;
 	}
 	public double getGraphPercentReceitaFinFundo() {
@@ -373,10 +372,10 @@ public class DadosConsolidados {
 	public void setGraphPercentReceitaFinFundo(double graphPercentReceitaFinFundo) {
 		this.graphPercentReceitaFinFundo = graphPercentReceitaFinFundo;
 	}
-	public int getGraphQtdReceitaFinOutros() {
+	public double getGraphQtdReceitaFinOutros() {
 		return graphQtdReceitaFinOutros;
 	}
-	public void setGraphQtdReceitaFinOutros(int graphQtdReceitaFinOutros) {
+	public void setGraphQtdReceitaFinOutros(double graphQtdReceitaFinOutros) {
 		this.graphQtdReceitaFinOutros = graphQtdReceitaFinOutros;
 	}
 	public double getGraphVrReceitaFinOutros() {
@@ -391,16 +390,16 @@ public class DadosConsolidados {
 	public void setGraphPercentFinOutros(double graphPercentFinOutros) {
 		this.graphPercentFinOutros = graphPercentFinOutros;
 	}
-	public int getGraphQtdReceitaFinFefc() {
+	public double getGraphQtdReceitaFinFefc() {
 		return graphQtdReceitaFinFefc;
 	}
-	public void setGraphQtdReceitaFinFefc(int graphQtdReceitaFinFefc) {
+	public void setGraphQtdReceitaFinFefc(double graphQtdReceitaFinFefc) {
 		this.graphQtdReceitaFinFefc = graphQtdReceitaFinFefc;
 	}
-	public int getGraphVrReceitaFinFefc() {
+	public double getGraphVrReceitaFinFefc() {
 		return graphVrReceitaFinFefc;
 	}
-	public void setGraphVrReceitaFinFefc(int graphVrReceitaFinFefc) {
+	public void setGraphVrReceitaFinFefc(double graphVrReceitaFinFefc) {
 		this.graphVrReceitaFinFefc = graphVrReceitaFinFefc;
 	}
 	public double getGraphPercentFinFefc() {
@@ -415,4 +414,8 @@ public class DadosConsolidados {
 	public void setTotalFinanceiroComRoni(double totalFinanceiroComRoni) {
 		this.totalFinanceiroComRoni = totalFinanceiroComRoni;
 	}
+	
+    
+	
+
 }
