@@ -16,8 +16,18 @@ import br.com.eleicoes.model.Candidato;
 import br.com.eleicoes.model.CandidatoPrincipal;
 import br.com.eleicoes.model.EleicaoPrincipal;
 
+/**
+ * Classe CandidatoService.
+ */
 public class CandidatoService {
 	
+	/**
+	 * Listar candidatos.
+	 *
+	 * @param paisOuEstado de String
+	 * @param codigoTipoCandidato de String
+	 * @return List<Candidato>
+	 */
 	public static List<Candidato> listarCandidatos(String paisOuEstado, String codigoTipoCandidato) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<String> entity = getHttpEntity();
@@ -30,6 +40,16 @@ public class CandidatoService {
         return response.getBody().getCandidatos();
 	}
 	
+	/**
+	 * Detalhes candidato.
+	 *
+	 * @param paisOuEstado de String
+	 * @param codigoTipoCandidato de String
+	 * @param nrPartido de String
+	 * @param nrCandidato de String
+	 * @param idCandidato de String
+	 * @return CandidatoPrincipal
+	 */
 	public static CandidatoPrincipal detalhesCandidato(String paisOuEstado, String codigoTipoCandidato, String nrPartido, String nrCandidato, String idCandidato) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<String> entity = getHttpEntity();
@@ -46,6 +66,11 @@ public class CandidatoService {
 		
 	}
 	
+	/**
+	 * Gets de HttpEntity.
+	 *
+	 * @return HttpEntity<String>
+	 */
 	private static HttpEntity<String> getHttpEntity() {
 		HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

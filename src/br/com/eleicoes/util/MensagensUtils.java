@@ -8,8 +8,12 @@ import com.google.common.collect.ImmutableMap;
 import br.com.eleicoes.model.Candidato;
 import br.com.eleicoes.model.CandidatoPrincipal;
 
+/**
+ * Classe MensagensUtils.
+ */
 public class MensagensUtils {
 
+	/** Constante MENSAGEM_INICIAL_CANDIDATOS. */
 	public static final String MENSAGEM_INICIAL_CANDIDATOS = 
 			"Escolha uma das opções para pesquisa do seu candidato: \n"
 			+ "\n1 - Presidente"
@@ -18,6 +22,7 @@ public class MensagensUtils {
 			+ "\n4 - Deputado Federal"
 			+ "\n5 - Deputado Estadual";
 	
+	/** Constante MENSAGEM_REGIOES. */
 	public static final String MENSAGEM_REGIOES = 
 			"De qual região é o seu candidato: \n"
 			+ "\n1 - Norte"
@@ -27,6 +32,7 @@ public class MensagensUtils {
 			+ "\n5 - Sul"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_NORTE. */
 	public static final String MENSAGEM_NORTE = 
 			"De qual estado é o seu candidato: \n"
 			+ "\n1 - Acre"
@@ -38,6 +44,7 @@ public class MensagensUtils {
 			+ "\n7 - Tocantins"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_NORDESTE. */
 	public static final String MENSAGEM_NORDESTE = 
 			"De qual estado é o seu candidato: \n"
 			+ "\n1 - Alagoas"
@@ -51,6 +58,7 @@ public class MensagensUtils {
 			+ "\n9 - Sergipe"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_CENTRO_OESTE. */
 	public static final String MENSAGEM_CENTRO_OESTE = 
 			"De qual estado é o seu candidato: \n"
 			+ "\n1 - Distrito Federal"
@@ -59,6 +67,7 @@ public class MensagensUtils {
 			+ "\n4 - Mato Grosso"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_SUDESTE. */
 	public static final String MENSAGEM_SUDESTE = 
 			"De qual estado é o seu candidato: \n"
 			+ "\n1 - Espírito Santo"
@@ -67,6 +76,7 @@ public class MensagensUtils {
 			+ "\n4 - São Paulo"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_SUL. */
 	public static final String MENSAGEM_SUL = 
 			"De qual estado é o seu candidato: \n"
 			+ "\n1 - Paraná"
@@ -74,22 +84,33 @@ public class MensagensUtils {
 			+ "\n3 - Santa Catarina"
 			+ "\n\nDigite 'inicio' para começar novamente";
 	
+	/** Constante MENSAGEM_NOME_CANDIDATO. */
 	public static final String MENSAGEM_NOME_CANDIDATO = 
 			"Qual o nome do seu candidato ?";
 	
+	/** Constante MENSAGEM_ERRO. */
 	public static final String MENSAGEM_ERRO = 
 			"Resposta incompatível, favor tente novamente !!!";
 	
+	/** Constante MENSAGEM_ERRO_NOME_CANDIDATO. */
 	public static final String MENSAGEM_ERRO_NOME_CANDIDATO = 
 			"Candidato não foi encontrado, favor tente novamente !!!";
 	
+	/** Constante MENSAGEM_ERRO_CANDIDADO_DUPLICADO. */
 	public static final String MENSAGEM_ERRO_CANDIDADO_DUPLICADO = 
 			"Foi encontrado mais de 1 candidato com esse nome \n"
 			+ "Digite o nome completo do candidato...";
 	
+	/** Constante MENSAGEM_REINICIAR_PESQUISA. */
 	public static final String MENSAGEM_REINICIAR_PESQUISA = 
 			"Para iniciar nova pesquisa digite 'inicio'";
 	
+	/**
+	 * Mensagem candidato formatada.
+	 *
+	 * @param candidato de Candidato
+	 * @return String
+	 */
 	public static String mensagemCandidatoFormatada(Candidato candidato) {
 		return "Número candidato: "+candidato.getNumero()+"\n"
 				+ "Nome Urna: "+candidato.getNomeUrna()+"\n"
@@ -104,11 +125,24 @@ public class MensagensUtils {
 				+ "\n4 - Fundo Especial Utilizado";
 	}
 	
+	/**
+	 * Nome candidato.
+	 *
+	 * @param listaTodosCandidatos de List<String>
+	 * @return String
+	 */
 	public static String nomeCandidato (List<String> listaTodosCandidatos) {
 		return listaTodosCandidatos + "\n";
 	}
 	
 	
+	/**
+	 * Outras infos candidatos.
+	 *
+	 * @param candidatoPrincipal de CandidatoPrincipal
+	 * @param respostaUsuario de String
+	 * @return String
+	 */
 	public static String outrasInfosCandidatos (CandidatoPrincipal candidatoPrincipal, String respostaUsuario) {
 		String mensagemRetorno = "";
 		switch (respostaUsuario) {
@@ -131,6 +165,12 @@ public class MensagensUtils {
 	
 			
 	
+	/**
+	 * Gets de mensagem estado by id.
+	 *
+	 * @param idMensagem de String
+	 * @return mensagem de String
+	 */
 	public static String getMensagemEstadoById(String idMensagem) {
 		String mensagemRetorno = "";
 		switch (idMensagem) {
@@ -153,6 +193,13 @@ public class MensagensUtils {
 		return mensagemRetorno;
 	}
 	
+	/**
+	 * Gets de estado candidato.
+	 *
+	 * @param idRegiao de String
+	 * @param codigoEstado de String
+	 * @return estadoCandidato de String
+	 */
 	public static String getEstadoCandidato(String idRegiao, String codigoEstado) {
 		String mensagemRetorno = "";
 		switch (idRegiao) {
@@ -180,6 +227,12 @@ public class MensagensUtils {
 		return mensagemRetorno;
 	}
 	
+	/**
+	 * Gets de cargo candidato.
+	 *
+	 * @param codCargo de String
+	 * @return cargoCandidato de String
+	 */
 	public static String getCargoCandidato(String codCargo) {
 		String mensagemRetorno = "";
 		switch (codCargo) {

@@ -13,8 +13,16 @@ import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import br.com.eleicoes.model.Usuario;
 import br.com.eleicoes.util.CandidatoUtils;
 
+/**
+ * Classe principal responsável por iniciar a aplicação.
+ */
 public class Main {
 
+	/**
+	 * Método principal responsável por iniciar a aplicação.
+	 *
+	 * @param args argumentos
+	 */
 	public static void main(String[] args) {
 		// Criacao do objeto bot com as informacoes de acesso.
 		TelegramBot bot = new TelegramBot("5629294896:AAFaHgT-nubZSCecbLiqhDcQO563iOKI9Xk");
