@@ -17,14 +17,31 @@ import br.com.eleicoes.util.CandidatoUtils;
 import br.com.eleicoes.util.MensagensUtils;
 import br.com.eleicoes.util.RegexUtil;
 
+/**
+ * Classe responsável pelos steps da aplicação.
+ */
 public class Steps {
 
+	/**
+	 * Executar step inicio.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 */
 	public static void executarStepInicio(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios) {
 		bot.execute(new SendMessage(update.message().chat().id(), MensagensUtils.MENSAGEM_INICIAL_CANDIDATOS));
 		resetRespostas(usuarios, String.valueOf(update.message().chat().id()));
 		adicionarResposta(usuarios, String.valueOf(update.message().chat().id()), "inicio");
 	}
 	
+	/**
+	 * Executar step 1.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 */
 	public static void executarStep1(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios) {
 		int respostaUsuario = 0;
 		try {
@@ -49,6 +66,13 @@ public class Steps {
 		}
 	}
 	
+	/**
+	 * Executar step 2.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 */
 	public static void executarStep2(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios) {
 		switch (update.message().text()) {
 		case "1":
@@ -79,6 +103,14 @@ public class Steps {
 
 	}
 	
+	/**
+	 * Executar step 3.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param respostas de List<String>
+	 */
 	public static void executarStep3(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios, List<String> respostas) {
 
 		String respostaRegiao = respostas.get(2);
@@ -101,6 +133,14 @@ public class Steps {
 		}
 	}
 	
+	/**
+	 * Executar step 4.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param respostas de List<String>
+	 */
 	public static void executarStep4(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios, List<String> respostas) {
 		List<Candidato> candidatos;
 		if ("1".equals(respostas.get(1))) {
@@ -127,6 +167,14 @@ public class Steps {
 	
 	
 		
+	/**
+	 * Executar step 5.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param respostas de List<String>
+	 */
 	public static void executarStep5(Update update, TelegramBot bot, HashMap<String, Usuario> usuarios, List<String> respostas) {	
 		CandidatoPrincipal candidatos;
 		Candidato candidatoPesquisado = usuarios.get(String.valueOf(update.message().chat().id())).getCandidato();
@@ -146,10 +194,25 @@ public class Steps {
 	}
 		
 	
+	/**
+	 * Executar step 6.
+	 *
+	 * @param update de Update
+	 * @param bot de TelegramBot
+	 */
 	public static void executarStep6(Update update, TelegramBot bot) {	
 		bot.execute(new SendMessage(update.message().chat().id(), MensagensUtils.MENSAGEM_REINICIAR_PESQUISA));
 	}
 	
+	/**
+	 * Resposta estado.
+	 *
+	 * @param update de Update
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param bot de TelegramBot
+	 * @param regex String
+	 * @param respostaRegiao de String
+	 */
 	public static void respostaEstado(Update update, HashMap<String, Usuario> usuarios, TelegramBot bot, String regex, String respostaRegiao) {
 		if (RegexUtil.validaResposta(regex, update.message().text())) {
 			bot.execute(new SendMessage(update.message().chat().id(), MensagensUtils.MENSAGEM_NOME_CANDIDATO));
@@ -161,6 +224,13 @@ public class Steps {
 	}
 	
 	
+	/**
+	 * Adicionar resposta.
+	 *
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param idUsuario de String
+	 * @param resposta de String
+	 */
 	public static void adicionarResposta(HashMap<String, Usuario> usuarios, String idUsuario, String resposta) {
 	    List<String> respostas = usuarios.get(idUsuario).getRespostas();
 	    if(respostas == null) {
@@ -169,6 +239,13 @@ public class Steps {
 	    respostas.add(resposta);
 	}
 	
+	/**
+	 * Adicionar resposta presidente.
+	 *
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param idUsuario de String
+	 * @param resposta de String
+	 */
 	public static void adicionarRespostaPresidente(HashMap<String, Usuario> usuarios, String idUsuario, String resposta) {
 	    List<String> respostas = usuarios.get(idUsuario).getRespostas();
 	    if(respostas == null) {
@@ -179,6 +256,12 @@ public class Steps {
 	    respostas.add(resposta);
 	}
 	
+	/**
+	 * Reset respostas.
+	 *
+	 * @param usuarios de HashMap<String, Usuario>
+	 * @param idUsuario de String
+	 */
 	public static void resetRespostas(HashMap<String, Usuario> usuarios, String idUsuario) {
 	    Usuario usuario = new Usuario();
         usuarios.put(idUsuario, usuario);
